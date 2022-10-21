@@ -38,10 +38,10 @@ public class Actor {
     public void setLastName(String myLastName){
         actorLastName = myLastName;
     }
-    public int getID(){
+    public int getActorId(){
         return actorId;
     }
-    public void setID(int myID){
-        actorId = myID;
+    public void setActorId(int myId){
+        actorId = myId;
     }
 }

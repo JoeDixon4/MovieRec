@@ -14,12 +14,12 @@ public class MovieRecApplication {
 	@Autowired
 	private ActorRepo actorRepo;
 	private FilmRepo filmRepo;
+	private CountryRepo countryRepo;
 
-	public MovieRecApplication(ActorRepo myActorRepo){
+	public MovieRecApplication(ActorRepo myActorRepo, FilmRepo myFilmRepo, CountryRepo myCountryRepo){
 		this.actorRepo = myActorRepo;
-	}
-	public MovieRecApplication(FilmRepo myFilmRepo){
 		this.filmRepo = myFilmRepo;
+		this.countryRepo = myCountryRepo;
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(MovieRecApplication.class, args);
@@ -37,4 +37,7 @@ public class MovieRecApplication {
 		return filmRepo.findAll();
 	}
 
+	@GetMapping("/allCountries")
+	public@ResponseBody
+	Iterable<Country> getAllCountries(){return countryRepo.findAll();}
 }
