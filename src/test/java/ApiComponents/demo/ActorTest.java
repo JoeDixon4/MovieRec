@@ -1,5 +1,5 @@
 package ApiComponents.demo;
-import ApiComponents.demo.Actor;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -26,5 +26,13 @@ public class ActorTest{
         myTestActor.setLastName("Garrett");
         String actualName = myTestActor.getLastName();
         Assertions.assertEquals("Garrett", actualName, "Last names are setting incorrectly");
+    }
+    @Test
+    public void testGetActorId(){
+        myTestActor.setActorId(1);
+        Assertions.assertEquals(1,myTestActor.getActorId(),"Getting ID's are working incorrectly");
+
+        myTestActor.setActorId(2);
+        Assertions.assertEquals(2,myTestActor.getActorId(),"Setting ID's are working incorrectly");
     }
 }
