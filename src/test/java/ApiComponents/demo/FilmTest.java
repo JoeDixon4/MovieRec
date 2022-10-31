@@ -60,7 +60,7 @@ public class FilmTest {
         myTestFilm.setSpecialFeatures("Deleted Scenes");
         Assertions.assertEquals("Deleted Scenes",myTestFilm.getSpecialFeatures(),"Getting or setting special features are working incorrectly.");
 
-        myTestFilm.setSpecialFeatures("Director's cut");
+        myTestFilm.setSpecialFeatures("Director's Cut");
         Assertions.assertEquals("Director's Cut",myTestFilm.getSpecialFeatures(),"Getting or setting special features are working incorrectly.");
     }
 }
