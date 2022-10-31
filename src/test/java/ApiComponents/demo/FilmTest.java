@@ -31,6 +31,7 @@ public class FilmTest {
         myTestFilm.setDescription("A story of two young sheep finding unexpected gravy on a roast dinner");
         Assertions.assertEquals("A story of two young sheep finding unexpected gravy on a roast dinner",myTestFilm.getDescription(),"Getting or setting description are working incorrectly.");
     }
+    @Test
     public void testGetReleaseYear(){
         myTestFilm.setReleaseYear(1986);
         Assertions.assertEquals(1986,myTestFilm.getReleaseYear(),"Getting or setting Release Year are working incorrectly.");
@@ -54,6 +55,7 @@ public class FilmTest {
         myTestFilm.setRating("U");
         Assertions.assertEquals("U",myTestFilm.getRating(),"Getting or setting rating are working incorrectly.");
     }
+    @Test
     public void testGetSpecialFeatures(){
         myTestFilm.setSpecialFeatures("Deleted Scenes");
         Assertions.assertEquals("Deleted Scenes",myTestFilm.getSpecialFeatures(),"Getting or setting special features are working incorrectly.");
