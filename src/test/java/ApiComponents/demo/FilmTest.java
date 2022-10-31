@@ -22,4 +22,20 @@ public class FilmTest {
         myTestFilm.setFilmId(2);
         Assertions.assertEquals(2,myTestFilm.getFilmId(),"Getting or setting film id are working incorrectly.");
     }
+    @Test
+    public void testGetDescription(){
+        myTestFilm.setDescription("A story of two men finding unexpected companionship in prison");
+        Assertions.assertEquals("A story of two men finding unexpected companionship in prison",myTestFilm.getDescription(),"Getting or setting description are working incorrectly.");
+
+        myTestFilm.setDescription("A story of two young sheep finding unexpected gravy on a roast dinner");
+        Assertions.assertEquals("A story of two young sheep finding unexpected gravy on a roast dinner",myTestFilm.getDescription(),"Getting or setting description are working incorrectly.");
+    }
+    public void testGetReleaseYear(){
+        myTestFilm.setReleaseYear(1986);
+        Assertions.assertEquals(1986,myTestFilm.getReleaseYear(),"Getting or setting Release Year are working incorrectly.");
+
+        myTestFilm.setReleaseYear(2011);
+        Assertions.assertEquals(2011,myTestFilm.getReleaseYear(),"Getting or setting Release Year are working incorrectly.");
+    }
+
 }

@@ -20,17 +20,8 @@ public class Film{
     @Column(name = "release_year")
     int releaseYear;
 
-    @Column(name = "rental_duration")
-    int rentalDuration;
-
-    @Column(name = "rental_rate")
-    double rentalPrice;
-
     @Column(name = "length")
     int filmLength;
-
-    @Column(name = "replacement_cost")
-    double replacementCost;
 
     @Column(name = "rating")
     String rating;
