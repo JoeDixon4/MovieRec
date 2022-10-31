@@ -7,6 +7,6 @@ public class ActorTest{
     public void ActorNameTest(){
         Actor myTestActor = new Actor("Joseph", "Dixon");
 
-       // Assertions.assertEquals("Joseph",Actor.getFirstName(myTestActor),"First names assigning incorrectly.");
+        Assertions.assertEquals("Joseph", myTestActor.getFirstName(),"First names assigning incorrectly.");
     }
 }
