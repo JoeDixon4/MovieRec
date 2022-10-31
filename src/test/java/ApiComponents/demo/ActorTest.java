@@ -1,12 +1,13 @@
 package ApiComponents.demo;
 
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
 public class ActorTest{
-
-    public void ActorNameTest(){
+    @Test
+    public void testActorName(){
         Actor myTestActor = new Actor("Joseph", "Dixon");
-
-        Assertions.assertEquals("Joseph", myTestActor.getFirstName(),"First names assigning incorrectly.");
+        String actualName  = myTestActor.getFirstName();
+        Assertions.assertEquals("Joseph", actualName,"First names assigning incorrectly.");
     }
 }
