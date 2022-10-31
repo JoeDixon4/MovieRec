@@ -54,63 +54,36 @@ public class Film{
     public void setFilmId(int myFilmId) {
         this.filmId = myFilmId;
     }
-
     public String getFilmTitle() {
         return filmTitle;
     }
     public void setFilmTitle(String myTitle) {
         this.filmTitle = myTitle;
     }
-
     public String getDescription() {
         return description;
     }
     public void setDescription(String myDescription) {
         this.description = myDescription;
     }
-
     public int getReleaseYear() {
         return releaseYear;
     }
     public void setReleaseYear(int myReleaseYear) {
         this.releaseYear = myReleaseYear;
     }
-
-    public int getRentalDuration() {
-        return rentalDuration;
-    }
-    public void setRentalDuration(int myRentalDuration) {
-        this.rentalDuration = myRentalDuration;
-    }
-
-    public double getRentalPrice() {
-        return rentalPrice;
-    }
-    public void setRentalPrice(double myRentalPrice) {
-        this.rentalPrice = myRentalPrice;
-    }
-
     public int getFilmLength() {
         return filmLength;
     }
     public void setFilmLength(int myFilmLength) {
         this.filmLength = myFilmLength;
     }
-
-    public double getReplacementCost() {
-        return replacementCost;
-    }
-    public void setReplacementCost(double myReplacementCost) {
-        this.replacementCost = myReplacementCost;
-    }
-
     public String getRating() {
         return rating;
     }
     public void setRating(String myRating) {
         this.rating = myRating;
     }
-
     public String getSpecialFeatures() {
         return specialFeatures;
     }
