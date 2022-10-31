@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 
 public class FilmTest {
     Film myTestFilm = new Film("Shawshank Redemption");
+    Film myEmptyFilm = new Film();
     @Test
     public void testGetFilmTitle(){
         Assertions.assertEquals("Shawshank Redemption",myTestFilm.getFilmTitle(),"Get film title is working incorrectly");
@@ -44,5 +45,20 @@ public class FilmTest {
 
         myTestFilm.setFilmLength(2);
         Assertions.assertEquals(2,myTestFilm.getFilmLength(),"Getting or setting film id are working incorrectly.");
+    }
+    @Test
+    public void testGetRating(){
+        myTestFilm.setRating("PG");
+        Assertions.assertEquals("PG",myTestFilm.getRating(),"Getting or setting rating are working incorrectly.");
+
+        myTestFilm.setRating("U");
+        Assertions.assertEquals("U",myTestFilm.getRating(),"Getting or setting rating are working incorrectly.");
+    }
+    public void testGetSpecialFeatures(){
+        myTestFilm.setSpecialFeatures("Deleted Scenes");
+        Assertions.assertEquals("Deleted Scenes",myTestFilm.getSpecialFeatures(),"Getting or setting special features are working incorrectly.");
+
+        myTestFilm.setSpecialFeatures("Director's cut");
+        Assertions.assertEquals("Director's Cut",myTestFilm.getSpecialFeatures(),"Getting or setting special features are working incorrectly.");
     }
 }
