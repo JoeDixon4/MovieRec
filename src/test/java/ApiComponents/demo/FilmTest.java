@@ -37,5 +37,12 @@ public class FilmTest {
         myTestFilm.setReleaseYear(2011);
         Assertions.assertEquals(2011,myTestFilm.getReleaseYear(),"Getting or setting Release Year are working incorrectly.");
     }
+    @Test
+    public void testGetFilmLength(){
+        myTestFilm.setFilmLength(1);
+        Assertions.assertEquals(1,myTestFilm.getFilmLength(),"Getting or setting film id are working incorrectly.");
 
+        myTestFilm.setFilmLength(2);
+        Assertions.assertEquals(2,myTestFilm.getFilmLength(),"Getting or setting film id are working incorrectly.");
+    }
 }

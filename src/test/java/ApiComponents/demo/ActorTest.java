@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 
 public class ActorTest{
     Actor myTestActor = new Actor("Joseph", "Dixon");
+    Actor myEmptyActor = new Actor();
     @Test
     public void testGetFirstActorName(){
         String actualName  = myTestActor.getFirstName();
