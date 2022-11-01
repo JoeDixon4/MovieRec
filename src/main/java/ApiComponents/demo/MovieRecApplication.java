@@ -41,8 +41,8 @@ public class MovieRecApplication {
 	public@ResponseBody
 	Iterable<Country> getAllCountries(){return countryRepo.findAll();}
 
-	@PostMapping("/actors")
-	public Actor createActor(@RequestBody Actor actor) {
-		return actorRepo.save(actor);
+	@PostMapping("/newActors")
+	public void createActor(@RequestBody Actor actor) {
+		actorRepo.save(actor);
 	}
 }
