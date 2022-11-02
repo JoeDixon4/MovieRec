@@ -1,10 +1,27 @@
 package ApiComponents.demo;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "film")
 public class Film{
+    @ManyToMany
+    @JoinTable(
+            name = "film_category",
+            joinColumns = @JoinColumn(name = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    Set<Category> filmCategory;
+
+    public Set<Category> getFilmCategory() {
+        return filmCategory;
+    }
+
+    public void setFilmCategory(Set<Category> filmCategory) {
+        this.filmCategory = filmCategory;
+    }
+
     //Attributes
     @Id
     @Column(name = "film_id")

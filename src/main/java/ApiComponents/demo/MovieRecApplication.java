@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @SpringBootApplication
 @RestController
 @RequestMapping("/home")
@@ -38,10 +40,16 @@ public class MovieRecApplication {
 	}
 
 	@GetMapping("/allCountries")
-	public@ResponseBody
+	public @ResponseBody
 	Iterable<Country> getAllCountries(){return countryRepo.findAll();}
 
-	@PostMapping("/newActors")
+//	@GetMapping("/category/{myCategory}")
+//	public @ResponseBody
+//	List<Film> getFilmByCategory(@PathVariable(value = "myCategory") String category){
+//		return filmRepo.findByCategory(name);
+//	}
+
+	@PostMapping("/newActor")
 	public void createActor(@RequestBody Actor actor) {
 		actorRepo.save(actor);
 	}
