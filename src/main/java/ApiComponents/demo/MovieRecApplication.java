@@ -3,7 +3,10 @@ package ApiComponents.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.ResourceAccessException;
 
 import java.util.List;
 
@@ -52,5 +55,16 @@ public class MovieRecApplication {
 	@PostMapping("/newActor")
 	public void createActor(@RequestBody Actor actor) {
 		actorRepo.save(actor);
+	}
+
+	@PutMapping("{id}")
+	public void updateActor(@PathVariable(value = "id") int id, @RequestBody Actor actorDetails){
+		Actor updateActor = actorRepo.findById(id)
+						.orElseThrow(() -> new ResourceAccessException("Actor does not exist with id: " + id));
+
+		updateActor.setFirstName(actorDetails.getFirstName());
+		updateActor.setLastName(actorDetails.getLastName());
+
+		actorRepo.save(updateActor);
 	}
 }
