@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
+import java.util.HashMap;
 import java.util.List;
 
 @SpringBootApplication
@@ -57,7 +58,7 @@ public class MovieRecApplication {
 		actorRepo.save(actor);
 	}
 
-	@PutMapping("{id}")
+	@PutMapping("/updateActor/{id}")
 	public void updateActor(@PathVariable(value = "id") int id, @RequestBody Actor actorDetails){
 		Actor updateActor = actorRepo.findById(id)
 						.orElseThrow(() -> new ResourceAccessException("Actor does not exist with id: " + id));
@@ -66,5 +67,16 @@ public class MovieRecApplication {
 		updateActor.setLastName(actorDetails.getLastName());
 
 		actorRepo.save(updateActor);
+	}
+	@DeleteMapping("/deleteActor/{id}")
+	public void deleteEmployee(@PathVariable(value = "id") int actorId)
+		throws ResourceAccessException  {
+			Actor actor = actorRepo.findById(actorId)
+					.orElseThrow(() -> new ResourceAccessException("Actor not found for this id: " + actorId));
+
+			actorRepo.delete(actor);
+//			Map<String, Boolean> response = new HashMap<>();
+//			response.put("deleted",boolean.TRUE);
+//			return response;
 	}
 }
