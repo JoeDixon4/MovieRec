@@ -1,5 +1,7 @@
 package ApiComponents.demo;
 
+import org.springframework.web.client.ResourceAccessException;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -14,6 +16,7 @@ public class Film{
     )
     Set<Category> filmCategory;
 
+    //private FilmRepo filmRepo;
     public Set<Category> getFilmCategory() {
         return filmCategory;
     }

@@ -3,12 +3,9 @@ package ApiComponents.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
-import java.util.HashMap;
 import java.util.List;
 
 @SpringBootApplication
@@ -47,11 +44,11 @@ public class MovieRecApplication {
 	public @ResponseBody
 	Iterable<Country> getAllCountries(){return countryRepo.findAll();}
 
-//	@GetMapping("/category/{myCategory}")
-//	public @ResponseBody
-//	List<Film> getFilmByCategory(@PathVariable(value = "myCategory") String category){
-//		return filmRepo.findByCategory(name);
-//	}
+	@GetMapping("/category/{myCategory}")
+	public @ResponseBody
+	List<Film> getFilmByCategory(@PathVariable(value = "myCategory") String category){
+		return filmRepo.findByCategory(category);
+	}
 
 	@PostMapping("/newActor")
 	public void createActor(@RequestBody Actor actor) {
@@ -68,15 +65,13 @@ public class MovieRecApplication {
 
 		actorRepo.save(updateActor);
 	}
+
 	@DeleteMapping("/deleteActor/{id}")
-	public void deleteEmployee(@PathVariable(value = "id") int actorId)
+	public void deleteActor(@PathVariable(value = "id") int actorId)
 		throws ResourceAccessException  {
 			Actor actor = actorRepo.findById(actorId)
 					.orElseThrow(() -> new ResourceAccessException("Actor not found for this id: " + actorId));
 
 			actorRepo.delete(actor);
-//			Map<String, Boolean> response = new HashMap<>();
-//			response.put("deleted",boolean.TRUE);
-//			return response;
 	}
 }
