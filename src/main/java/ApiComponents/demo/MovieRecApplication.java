@@ -49,10 +49,15 @@ public class MovieRecApplication {
 	List<Film> getFilmByCategory(@PathVariable(value = "myCategory") String category){
 		return filmRepo.findByCategory(category);
 	}
-	@GetMapping("/filmActor/{myName}")
+	@GetMapping("/filmActorFirstName/{myName}")
 	public @ResponseBody
-	List<Film> getFilmByActor(@PathVariable(value = "myName") String name){
-		return filmRepo.findByActor(name);
+	List<Film> getFilmByActorFirstName(@PathVariable(value = "myName") String name){
+		return filmRepo.findByActorFirstName(name);
+	}
+	@GetMapping("/filmActorLastName/{myName}")
+	public @ResponseBody
+	List<Film> getFilmByActorLastName(@PathVariable(value = "myName") String name){
+		return filmRepo.findByActorLastName(name);
 	}
 
 	@PostMapping("/newActor")
