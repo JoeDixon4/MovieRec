@@ -16,6 +16,14 @@ public class Film{
     )
     Set<Category> filmCategory;
 
+    @ManyToMany
+    @JoinTable(
+            name = "film_actor",
+            joinColumns = @JoinColumn(name = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    Set<Actor> filmActor;
+
     //private FilmRepo filmRepo;
     public Set<Category> getFilmCategory() {
         return filmCategory;

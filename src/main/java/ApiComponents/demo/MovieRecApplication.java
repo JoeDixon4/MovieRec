@@ -44,10 +44,15 @@ public class MovieRecApplication {
 	public @ResponseBody
 	Iterable<Country> getAllCountries(){return countryRepo.findAll();}
 
-	@GetMapping("/category/{myCategory}")
+	@GetMapping("/filmCategory/{myCategory}")
 	public @ResponseBody
 	List<Film> getFilmByCategory(@PathVariable(value = "myCategory") String category){
 		return filmRepo.findByCategory(category);
+	}
+	@GetMapping("/filmActor/{myName}")
+	public @ResponseBody
+	List<Film> getFilmByActor(@PathVariable(value = "myName") String name){
+		return filmRepo.findByActor(name);
 	}
 
 	@PostMapping("/newActor")

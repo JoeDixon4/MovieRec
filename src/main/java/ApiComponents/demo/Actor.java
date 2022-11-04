@@ -1,10 +1,13 @@
 package ApiComponents.demo;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "actor")
 public class Actor {
+    @ManyToMany(mappedBy = "filmActor")
+    Set<Film> actorFilm;
     //Attributes
     @Id
     @Column(name ="actor_id")
